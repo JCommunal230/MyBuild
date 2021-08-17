@@ -1,0 +1,97 @@
+
+body {
+	font-family: 'Montserrat', sans-serif;
+	color:white;
+	background-color: black;
+	margin: 0;
+  padding: 0;
+	text-align: center;
+}
+.container {
+	position: relative;
+	width: 100%;
+
+
+}
+.container section {
+	position: sticky;
+	top: 0;
+	width: 100%;
+	height: 100vh;
+	display: flex;
+	justify-content:center;
+	align-content: center;
+	flex-direction: column;
+	
+}
+.container section:nth-child(1){
+	background: url(../images/background/Thresh_0.jpg);
+	background-size: cover;
+	
+}
+.container section:nth-child(3){
+	background: url(../images/background/Thresh_2.jpg);
+	background-size: cover;
+	
+}
+.container section:nth-child(4){
+	background: url(../images/background/Thresh_3.jpg);
+	background-size: cover;
+	
+}
+.container section:nth-child(5){
+	background: url(../images/background/Thresh_5.jpg);
+	background-size: cover;
+	
+}
+.container section:nth-child(6){
+	background: url(../images/background/Thresh_6.jpg);
+	background-size: cover;
+	
+}
+h3 {
+	font-weight: bold;
+	font-size: 35px;
+	border: solid 2px rgba(150, 150, 150, 0.3);
+	background-color: rgba(150, 150, 150, 0.5);
+	width: 40%;
+	margin: 0 auto;
+}
+h4 {
+	font-size: 20px;
+}
+img {
+	width: 5%;
+	height: 20%;
+}
+.pros a {
+	text-decoration: none;
+	color: white;
+	background: black;
+	padding: 5px;
+}
+.pros a:hover {
+	background-color: rgba(150, 150, 150, 1.0);
+	transition: 1.2s;
+}
+.mainpage{
+  background-color: darkred;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  font-size: 16px;
+  margin: 4px 2px;
+  opacity: 0.6;
+  transition: 0.3s;
+  display: flex;
+  text-decoration: none;
+  cursor: pointer;
+  position: sticky;
+  z-index: 10;
+  top: 88%;
+  left: 88%;
+}
+.mainpage:hover {
+	opacity: 1
+}
