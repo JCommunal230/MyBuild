@@ -1,69 +1,93 @@
 body{
 	font-family: 'Montserrat', sans-serif;
 	color:black;
-	background-color: white;
-	margin: 0;
+  background-image: linear-gradient(rgba(240,240,255,0.8), rgba(240,240,255,0.8)), url("../images/network.png");
+  margin: 0;
   padding: 0;
+  box-sizing: border-box;
+  position: static;
 }
+#back_video{
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -5;
+  filter: blur(1px) brightness(1.6);
+}
+/* ----------1. Header ------------ */
 header{
 	display: flex;
 	text-align: center;
 	justify-content: space-between;
   flex-direction: row;
+  box-sizing: border-box;
   margin: 0px;
   padding: 0;
-  height: 17vh;
   border-radius: 10px;
+  min-width: 1000px;
+  height: max(17vh, 120px);
 }
+/* ----------1.1 Site icon ------------ */
 .site_icon{
-  background: white;
+  background: none;
   width: 25vw;
+  min-width: 250px;
+  min-height: 115px;
   cursor: pointer;
+  position: relative;
 }
-.site_icon img{
+.site_icon_img{
   position: absolute;
-  left: 9%;
-  top: 2%;
+  left: 40%;
+  top: 10%;
   z-index: 0;
+  filter: grayscale(100%);
+}
+.site_icon_img:hover {
+  filter: grayscale(0%);
 }
 .site_icon h2{
   position: absolute;
-  left: 8.5%;
-  top: 9%;
+  left: 36%;
+  top: 40%;
   z-index: 1;
-  font-weight: bold;
-  font-size: 1.5rem;
+  font-weight: 900;
+  letter-spacing: 0;
+  font-variant:  small-caps;
+  font-size: 2rem;
   color: #ebd899;
   background: linear-gradient(to top,rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
-  border: 0px solid transparent;
   border-radius: 10px;
   text-shadow: 0px 1px 3px black;
 }
+/* ----------1.2 Catchphrase ------------ */
 .catchphrase{
-  background: white;
+  background: none;
   user-select: none;
+  position: relative;
 }
 .bold{
-  font-weight: bold;
+  font-weight: 700;
   font-size: 2rem;
-  letter-spacing: 0px;
-  text-shadow:0px 0px 5px black,1px 1px 1.5px black, 0 0 0.2em rgb(120, 45, 25);  
+  font-variant:  small-caps;
+  text-shadow:0px 0px 5px black,1px 1px 1.5px black, 0 0 0.2em rgb(120, 45, 25); 
 }
 .catchphrase h1{
-  animation: reveal1 2s ease-in-out 1; 
+  animation: reveal_1 2s ease-in-out 1; 
   margin: 3% 0 0 0;
 }
-.catchphrase p{
- 
+.catchphrase p{ 
   margin: 0 0 0 0;
 }
-.catchphrase .p1{
-  animation: reveal2 3s ease-in 1;
+.catchphrase .part_1{
+  animation: reveal_2 3s ease-in 1;
 }
-.catchphrase .p2{
-  animation: reveal3 4s ease-in 1;
+.catchphrase .part_2{
+  animation: reveal_3 4s ease-in 1;
 }
-@keyframes reveal1{
+@keyframes reveal_1{
   0%{
     opacity: 0;
     filter: blur(30px);
@@ -75,7 +99,7 @@ header{
     transform: scale(1);
   }
 }
-@keyframes reveal2 {
+@keyframes reveal_2 {
   0%,50%{
     opacity: 0;
     filter: blur(20px);
@@ -87,7 +111,7 @@ header{
     transform: scale(1);
   }
 }
-@keyframes reveal3 {
+@keyframes reveal_3 {
   0%,75%{
     opacity: 0;
     filter: blur(20px);
@@ -99,120 +123,236 @@ header{
     transform: scale(1);
   }
 }
+/* ----------1.3 Log in/Sign in ------------ */
 .log{
 	display: flex;
-	flex-direction: row;
-	list-style: none;
-  text-transform: uppercase;
+  font-variant:  small-caps;
   width: 25vw;
-  }
-.log:nth-child(n){
+  min-width: 250px;
   justify-content: center;
   align-items: center;
-}
-.log:nth-child(2n+1) a:hover{
- filter: brightness(1.3);
- color: rgb(120, 45, 25);
-}
-.log:nth-child(2n) a:hover{
- filter: brightness(1.3);
- color: rgb(120, 45, 25);
-}
-.log:nth-child(n) a{
+  }
+.log_in{
   font-weight: bold;
-  padding: 10px;
-	margin: 15px 15px;
-  background-color: #ebd899;	
+  padding: 0.7rem 1rem;
+  margin: 1rem 0.7rem;
+  background-color: #ebd899;  
   border:  groove #aa9329 2px;
   border-width: 0 0 4px;
   color: #272209;
-	border-radius: 15px;
+  border-radius: 8px;
   text-decoration: none;
 }
-#champions {
-  height: 72.2vh;
-  display: flex;
-  justify-content: center; 
+.sign_in{
+  font-weight: bold;
+  padding: 0.7rem 1rem;
+  margin: 1rem 0.7rem;
+  background-color:rgb(80, 45, 25);
+  color:#ebd899;
+  border:  groove #aa9329 2px;
+  border-width: 0 0 4px;
+  border-radius: 8px;
+  text-decoration: none;
 }
-.posName{
+.sign_in:hover{
+  filter: brightness(2);
+}
+.log_in:hover{
+  filter: brightness(1.3);
+  color: rgb(120, 45, 25);
+}
+/* ----------2. Main section ------------ */
+.main_section{
+   display: flex;
+  justify-content: space-between;
+}
+.main_section tr td{
+  min-width: 250px;
+}
+.main{
+  position: relative;
   display: flex;
-  flex-direction: row;
+  justify-content: center;
+  left: 0;
+  height: 75vh;/**/
+  min-width: 1400px;
+  min-height: 400px;
+}
+/* ----------2.1 Positions ------------ */
+.positions{
+  background: rgba(250,250,250,0.7);
+  display: flex;
   justify-content: center;
   align-items: center;
   text-transform: uppercase;
-  margin: auto;
-  margin-bottom: 10px;
-  margin-top: 5px;
-  border: 1px solid white;
+  margin-top: 5px;/**/
+  border: 1px solid grey;/**/
   border-radius: 6px;
-  width: 18vw;
+  width: max(17vw, 250px);
+  margin-right: min(0.5vw, 10px);
+  margin-left: min(0.5vw, 10px);
+  animation: start 1s ease-out 1;
 }
-.posName p{
+@keyframes start{
+  0%{
+      background-color: black;
+      color: white;
+  }
+  100%{
+    background-color: rgba(250,250,250,0.7);
+    color: black;
+  }
+}
+.position_name{
   margin: 0; 
-  font-size: 25px;
+  font-size: 1.6rem;
 }
-.posName:hover{
+.positions.active, .positions:hover{
   background: black;
   color: white;
+  border: 1px solid white;/**/
+}
+.positions:hover{
   transition-property: background, color;
   transition-duration: 0.4s, 0.4s;
   transition-timing-function: ease-out;
   cursor: pointer;
 }
-.posName.active{
-  background: black;
-  color: white;
-}
-.posChampions{
+/* ----------2.2 Champion sections ------------ */
+.favorite_champions, .most_played{
   display: flex;
-  flex-direction: row;
-  justify-content: center;
+  justify-content: space-between;
+  min-width: 1000px;
 }
-.posChampions td{
+.favorite_champions td{
    display: flex;
    flex-wrap: wrap;
    flex-direction: column;
-   height: 63.8vh;
-   width: 18vw;
+   height: 63.8vh;/**/
+   width: max(18vw, 200px);
+   min-height: 250px;
    align-items: center;
   }
-.posChampions td.active{
+.favorite_champions td.active, .most_played td.active{
    display: flex;
    flex-direction: row;
    justify-content: center;
-   width: 90vw;
+   align-items: flex-start;
+   width: max(90vw, 900px);
+   height: 32vh;
   }
-.posChampions td.hidden{
+.favorite_champions td.hidden, .most_played td, .most_played td.hidden{
    display: none;
   }
-/* Shiny hover*/
+  .most_played .champion img {
+    filter: grayscale(100%);
+    transition: 0.2s;
+  }
+  .most_played img:hover {
+    filter: grayscale(0%);
+    transition: 0.2s;
+  }
+  /* ----------2.3 Tooltips ------------ */
+  .tooltip{
+  position: relative;
+  display: inline-block;
+  }
+  /* Show the tooltip text when you mouse over the tooltip container */
+  .tooltiptextright, .tooltiptextleft, .tooltiptextdown, .tooltiptextright.active, .tooltiptextleft.active{
+  visibility: hidden;
+  width: 130px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 3px 0;
+  opacity: 0;
+  transition: opacity 0.2s;
+  overflow: visible;
+  position: absolute;
+  z-index: 15;
+  }
+  .tooltiptextright{
+  bottom: 20%;
+  left: 110%;  
+  }
+  .tooltiptextleft{
+  bottom: 20%;
+  right: 110%;
+  }
+  .tooltiptextdown{
+  top: 120%;
+  left:-5%;
+  }
+    .tooltiptextright.active, .tooltiptextleft.active{
+  height: 70px;/**/
+  top: 120%;
+  left:-5%;
+  }
+  .tooltiptextright::before,.tooltiptextleft::before, .tooltiptextdown::before, .tooltiptextright.active::before, .tooltiptextleft.active::before {
+  content: "";
+  position: absolute;
+  border-width: 5px;
+  border-style: solid;
+}
+.tooltiptextright::before{
+  top: 50%;
+  left: 0%;
+  margin-left: -5px;
+  border-color: #555 transparent transparent transparent;
+}
+.tooltiptextleft::before {
+  top: 50%;
+  left: 100%;
+  margin-left: -5px;
+  border-color: #555 transparent transparent transparent;
+}
+  .tooltiptextdown::before{
+  bottom: 100%;
+  left: 45%;
+  margin-right: -5px;
+  border-color: transparent transparent #555 transparent;
+}
+
+.tooltiptextright.active::before, .tooltiptextleft.active::before {
+  top: -13%;
+  left: 50%;
+  margin-right: 5px;
+  border-color: transparent transparent #555 transparent;
+}
+.tooltip:hover .tooltiptextright, .tooltip:hover .tooltiptextleft, .tooltip:hover .tooltiptextdown,  .tooltip:hover .tooltiptextright.active, .tooltip:hover .tooltiptextleft.active{
+  visibility: visible;
+  opacity: 1;
+}
+/* ----------2.4 Champions ------------ */
+/* Shiny hover + zoom + outline*/
 .champion{
   display: inline-block;
-	overflow: hidden;
-  width: 100px;
-  height: 100px;
-  margin-left: 10px;
-  margin-right: 15px;
+  position: relative;
+  overflow: hidden;
+  width: 100px;/**/
+  height: 100px;/**/
+  margin-left: 10px;/**/
+  margin-right: 10px;/**/
   transition: 0.2s;
 }
 .champion img{
   display: block;
 }
-
 .champion:hover{
-  border:  4px solid #ebd899;
-  margin-right: 0;
-  transform: scale(1.15) translateX(-5px);
+  outline: 4px outset rgba(255,220,150,1);/**/
+  transform: scale(1.15);
   transition-property: all;
   transition-duration: 0.1s;
   transition-timing-function: ease-out;
+  z-index: 10;
 }
-.champion::before{
+.champion::before, .champion::after{
   content: "";
   position: absolute;
   top: 0%;
-  left: -20%; /*why not at 0%?*/
-  width: 20%;
+  left: -40%;/**/
+  width: 40%;
   height: 100%;
   opacity: 0;
   background: linear-gradient(
@@ -230,6 +370,12 @@ header{
     rgba(255, 254, 240, 0.5) 100%
   );/*a way to reduce this bloc?variable?*/
 }
+.champion::after{
+  top: -40%;
+  left: 0%;
+  width: 100%;
+  height: 40%; 
+}
 .champion:hover::before{
   opacity: 1;
   left: 100%;
@@ -239,29 +385,6 @@ header{
 }
 .champion:active::before{
   opacity: 0;
-}
-.champion::after{
-  content: "";
-  position: absolute;
-  top: -20%;
-  left: 0%;
-  width: 100%;
-  height: 20%;
-  opacity: 0;
-  background: linear-gradient(
-    to bottom,
-    rgba(255, 254, 240, 0.05) 0%,
-    rgba(255, 254, 240, 0.1) 5%,
-    rgba(255, 254, 240, 0.15) 10%,
-    rgba(255, 254, 240, 0.2) 15%,
-    rgba(255, 254, 240, 0.25) 20%,
-    rgba(255, 254, 240, 0.3) 25%,
-    rgba(255, 254, 240, 0.35) 30%,
-    rgba(255, 254, 240, 0.4) 35%,
-    rgba(255, 254, 240, 0.45) 45%,
-    rgba(255, 254, 240, 0.5) 50%,
-    rgba(255, 254, 240, 0.5) 100%
-  );
 }
 .champion:hover::after{
   opacity: 1;
@@ -273,23 +396,135 @@ header{
 .champion:active::after{
   opacity: 0;
 }
+.favorite_champions td.active .champion, .most_played td.active .champion {
+  animation: reveal_1 0.5s ease-in-out 1;
+}
+.favorite_champions td .champion{
+  animation: reveal_1 0.5s ease-in-out 1;
+}
+/* ----------3. Footer ------------ */
 footer{
   display: flex;
   flex-direction: column;
   text-align: center;
-  width: 100%;
-  padding-top: 20px;
   background:linear-gradient(to top,rgba(0, 0, 0, 0.2), rgba(255, 255, 255, 0.1));
   height: 8vh;
   justify-content: center;
+  width: max(100%, 1000px);
 }
 .copyright p{
-  font-size: 10px;
+  font-size: 0.7rem;
   font-style: italic;
   margin: 0;
   color: rgba(100, 100, 100, 1);
 }
-.copyright p a{  
+.copyright a{  
   color: rgba(100, 100, 100, 1);
 }
+/* ----------4. Annexes ------------ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-delay: -1ms !important;
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    background-attachment: initial !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0s !important;
+    transition-delay: 0s !important;
+  }
+}
 
+@media (max-width: 768px)
+{
+
+  header,footer,.main{
+    width: 100%;
+    min-width: 0;
+  }
+  header{
+    height: 40px;
+  }
+  .favorite_champions,.main{
+    min-width: 0;
+    min-height: 0;
+    width: 100%;
+  }
+  .main_section{
+    display: flex;
+    flex-direction: row;
+  }
+  .position td{
+    margin-bottom: 82px;
+  }
+  .position{
+    flex-direction: column;
+    height: 600px;
+    justify-content: start;
+  }
+  .favorite_champions{
+    flex-direction: column;
+    position: absolute;
+    justify-content: start;
+    top: 9%;
+    left: 0vh;
+    height: 600px;
+    width: auto;
+  }
+  .champion, .champion a img{
+    width: 60px;
+    height: 60px;
+  }
+  .favorite_champions td{
+    position: relative;
+    justify-content: start;
+   display: flex;
+   flex-direction: row; 
+   height: 120px;
+    width: 70vh;
+   min-height: 0;
+  }
+  .favorite_champions td.hidden{
+    display: flex;
+    visibility: hidden;
+    height: 120px;
+  }
+  .favorite_champions td.active{
+    position: relative;
+    justify-content: start;
+    width: 70vh;
+   min-height: 0;
+   align-items: center;
+   height: 120px;
+  }
+  .position{
+    position: relative;
+    display: flex;
+  }
+  .favorite_champions td div{
+    position: relative;
+  }    
+  .positions{
+    width: auto;
+    position: relative;
+    top: 2vh;
+    z-index: 6;
+  }
+  .catchphrase,.site_icon, .most_played, footer, video, .most_played td.active, .tooltiptextright, .tooltiptextdown, .tooltiptextleft
+  {
+      display: none;
+  }
+  *,
+  ::before,
+  ::after {
+    animation-delay: -1ms !important;
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    background-attachment: initial !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0s !important;
+    transition-delay: 0s !important;
+  }
+
+}
