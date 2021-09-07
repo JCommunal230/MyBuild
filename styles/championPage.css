@@ -1,97 +1,605 @@
-
 body {
 	font-family: 'Montserrat', sans-serif;
 	color:white;
+	text-shadow: -0.5px -0.5px #000, 0.5px -0.5px 0 #000, -0.5px 0.5px 0 #000, 0.5px 0.5px 0 #000;
 	background-color: black;
 	margin: 0;
   padding: 0;
 	text-align: center;
+	user-select: none;
 }
+table {
+	border-collapse: collapse;
+	border: none;
+}
+/*------------------------1.Menu-----------------------*/
+#menu{
+	position: fixed;
+	z-index: 2;
+  top: 10vh;
+  right: 3vw;
+  animation: reveal 1s ease-out 1;
+}
+#menu ul{
+	list-style: none;
+	display: flex;
+	flex-direction: column;
+}
+#menu a{	
+  text-decoration: none;
+  color: white;
+	position: relative;
+  margin: 0.3rem 2px;
+  padding: 1rem 1rem;
+  font-size: 1.25rem;
+  background-color: rgba(250, 250, 250, 0.1);
+  box-shadow: 5px 5px 10px black;
+  border-radius: 5px;
+  height: 10vh;
+  display: flex;
+  justify-content: center;
+  transition: 0.3s;
+  align-items: center;
+}
+#menu a:hover, #menu li.active a{
+	background-color: rgba(250, 250, 250, 0.5);
+	transform: translateX(-15px);
+}
+#homepage {
+	background: url(../img/icons/toolbox.png);
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+	opacity: 0.4;
+	transition: 0.3s;
+}
+#homepage:hover{
+	transform: translateX(-15px);
+}
+#homepage a {
+	box-shadow: none;
+	background-color: transparent;
+}
+#homepage:hover{
+	opacity: 1;
+}
+#homepage a:hover{
+	background-color: transparent;
+	padding-left: 2rem;/**/
+	padding-right: 0;/**/
+  opacity: 1;
+}
+/*------------------------2.Container-----------------------*/
 .container {
 	position: relative;
 	width: 100%;
-
-
+	animation: start 1s linear 1;	
 }
-.container section {
-	position: sticky;
-	top: 0;
-	width: 100%;
-	height: 100vh;
+.container .section {
 	display: flex;
 	justify-content:center;
-	align-content: center;
-	flex-direction: column;
-	
+	flex-direction: column;	
 }
-.container section:nth-child(1){
-	background: url(../images/background/Thresh_0.jpg);
-	background-size: cover;
-	
-}
-.container section:nth-child(3){
-	background: url(../images/background/Thresh_2.jpg);
-	background-size: cover;
-	
-}
-.container section:nth-child(4){
-	background: url(../images/background/Thresh_3.jpg);
-	background-size: cover;
-	
-}
-.container section:nth-child(5){
-	background: url(../images/background/Thresh_5.jpg);
-	background-size: cover;
-	
-}
-.container section:nth-child(6){
-	background: url(../images/background/Thresh_6.jpg);
-	background-size: cover;
-	
+.base{
+	display: flex;
+	justify-content:center;
+	align-items: center;
+	flex-direction: column;	
+	position: relative;
+	margin-right: 200px;
+	left: 0;
 }
 h3 {
 	font-weight: bold;
-	font-size: 35px;
-	border: solid 2px rgba(150, 150, 150, 0.3);
-	background-color: rgba(150, 150, 150, 0.5);
-	width: 40%;
-	margin: 0 auto;
+	font-size: 2.2rem;	
+	border-radius: 8px;	
+	font-variant: small-caps;
+	padding: 0 1.5rem;
+	background: rgba(250, 250, 250, 0.1);
+	box-sizing: content-box;
+	margin: 0.4rem auto;
+	box-shadow: 5px 5px 10px black;
 }
 h4 {
-	font-size: 20px;
+	font-size: 1.25rem;
+	margin: 1rem;
 }
-img {
-	width: 5%;
-	height: 20%;
+/*------------------------3.Title page-----------------------*/
+#title_page{
+	background: url(http://ddragon.leagueoflegends.com/cdn/img/champion/splash/Thresh_0.jpg);
+	background-image: radial-gradient(rgba(0,0,0,0), rgba(0,0,0,0.2)), url(http://ddragon.leagueoflegends.com/cdn/img/champion/splash/Thresh_0.jpg);
+	background-size: cover;	
+
+}
+.champion_name{
+	animation-name: clip;
+	animation-duration: 1800ms;
+	animation-delay: 200ms;
+	animation-timing-function: linear;
+}
+@keyframes clip{
+0% {
+    clip-path: polygon(98% 0%, 100% 2%, 2% 100%, 0% 98%);
+	}
+100% {
+    clip-path: polygon(98% -200%, 300% 2%, 2% 300%, -200% 98%);
+	}
+}
+
+/*------------------------4. Runes-----------------------*/
+#runes{
+	background: url(http://ddragon.leagueoflegends.com/cdn/img/champion/splash/Thresh_2.jpg);
+	background-image: radial-gradient(rgba(0,0,0,0), rgba(0,0,0,0.2)), url(http://ddragon.leagueoflegends.com/cdn/img/champion/splash/Thresh_2.jpg);
+	background-size: cover;	
+}
+.rune img{
+	opacity: 0.3;
+}
+.rune_section{
+	background-color: rgba(250, 250, 250, 0.05);
+	border-radius: 0.3rem;
+	margin: 1rem auto;
+	box-shadow: 5px 5px 10px black;
+	overflow: hidden;
+	padding: 2vh 2vw;
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+	gap: 3vw;
+}
+.base_stats tr, .secondary tr,.primary tr{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.base_stats td{
+	display: block;
+	border-collapse: collapse;
+	box-sizing: border-box;
+	background-color: rgba(0, 0, 0, 0.3);
+	height: 30px;
+	width: 30px;
+	border-radius: 25px;
+	border: 1px rgba(255, 215, 0, 0.3) solid;
+	margin: 0.2rem;
+	cursor: pointer;
+}
+.secondary td, .primary td{
+	display: block;
+	border-collapse: collapse;
+	box-sizing: border-box;
+	background-color: rgba(0, 0, 0, 0.3);
+	height: 40px;
+	width: 40px;
+	border-radius: 25px;
+	border: 1px rgba(255, 215, 0, 0.3) solid;
+	margin: 0.2rem;
+	cursor: pointer;
+}
+
+.base_stats td.active .rune img, .secondary td.active .rune img, .primary td.active .rune img{
+	opacity: 1;
+}
+.base_stats td.active, .secondary td.active{
+	opacity: 1;
+	border: 1px rgba(255, 215, 0, 1.0) solid;
+	background-color: rgba(0, 0, 0, 1.0);
+}
+.primary td.active{
+		opacity: 1;
+		border: 1px rgba(255, 215, 0, 1.0) solid;
+	background-color: rgba(0, 0, 0, 1.0);
+}
+.primary td .main .rune{
+		opacity: 1;
+}
+.rune_section td img{
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+.rune_section th img{
+	width: 110%;
+	height: 110%;
+}
+.rune_section th{
+	display: flex;
+	opacity: 1;
+	width: 50px;
+	height: 50px;
+	align-items: center;
+	justify-content: center;
+}
+.rune_section td:hover .tooltip, .rune_section td:hover .tooltip_stats, fieldset div:hover .tooltip_items,  th:hover .tooltip_spell{
+	opacity: 1;
+	border: rgba(250,250,250,1) 1px solid;
+}
+.rune_section td:hover{
+	opacity: 1;
+}
+.base_stats th{
+	visibility: hidden;
+}
+.main_rune td{
+	width: 70px;
+	height: 70px;
+	background: none;
+	border: none;
+}
+/*------------------------4.3 Tooltips-----------------------*/
+.tooltip, .tooltip_stats{
+	position: absolute;
+	background-color: rgba(0, 0, 0, 1.0);
+	font-size: 0.7rem;
+  max-width: 30vw;
+  padding: 0.4rem;
+  border-radius: 3px;
+  pointer-events: none;
+  opacity: 0;
+  z-index: 25;
+  margin-top: 0.5rem;
+  margin-left: 1rem;
+  transition: opacity .1s ease-in-out;
+}
+.tooltip_spell{
+	position: absolute;
+	background: black;
+	font-size: 0.7rem;
+  max-width: 25vw;
+  padding: 0.4rem;
+  border-radius: 3px;
+  pointer-events: none;
+  opacity: 0;
+  margin-top: 1rem;
+  font-weight: normal;
+  margin-left: 3rem;
+  transition: opacity .1s ease-in-out;
+}
+.tooltip_items{
+	position: absolute;
+	background: black;
+	font-size: 0.7rem;
+  width: 20vw;
+  padding: 0.4rem;
+  border-radius: 3px;
+  pointer-events: none;
+  opacity: 0;
+ 	margin-top: 3.5rem;
+  transition: opacity .1s ease-in-out;
+}
+.tooltip_items li, .tooltip li, .tooltip_stats li, .tooltip_spell li {
+	list-style: none;
+}
+.tt_title{
+	color: darkgoldenrod;
+	font-size: 1rem;
+}
+
+/*------------------------5. Items/Spell Order-----------------------*/
+#items{
+	background: url(http://ddragon.leagueoflegends.com/cdn/img/champion/splash/Thresh_3.jpg);
+	background-image: radial-gradient(rgba(0,0,0,0), rgba(0,0,0,0.2)), url(http://ddragon.leagueoflegends.com/cdn/img/champion/splash/Thresh_3.jpg);
+	background-size: cover;	
+}
+/*------------------------5.1 Items-----------------------*/
+.item_sect {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+.item_sect legend {
+	font-variant: small-caps;
+	font-size: 1.3rem;
+}
+fieldset{
+	background-color: rgba(250, 250, 250, 0.05);
+	border-radius: 0.3rem;
+	margin: 1rem 1rem;
+	box-shadow: 5px 5px 10px black;
+	overflow: hidden;
+}
+fieldset div {
+	cursor: pointer;
+}
+.core,.situational,.starter,.boots{
+	display: flex;
+	flex-direction: row;
+	gap: 0.5rem;
+	justify-content: center;
+	align-items: center;
+}
+.shoulderguards{
+	height: 48px;
+	width: 48px;
+	background-image: url(http://ddragon.leagueoflegends.com/cdn/11.16.1/img/sprite/item1.png);
+	background-repeat: no-repeat;
+	background-position: -336px -192px;
+}
+.solari{
+	height: 48px;
+	width: 48px;
+	background-image: url(http://ddragon.leagueoflegends.com/cdn/11.16.1/img/sprite/item1.png);
+	background-repeat: no-repeat;
+	background-position: -192px -96px;
+}
+.zeke{
+	height: 48px;
+	width: 48px;
+	background-image: url(http://ddragon.leagueoflegends.com/cdn/11.16.1/img/sprite/item0.png);
+	background-repeat: no-repeat;
+	background-position: -240px -288px;
+}
+.knightvow{
+	height: 48px;
+	width: 48px;
+	background-image: url(http://ddragon.leagueoflegends.com/cdn/11.16.1/img/sprite/item0.png);
+	background-repeat: no-repeat;
+	background-position: -192px -432px;
+}
+.swiftness{
+	height: 48px;
+	width: 48px;
+	background-image: url(http://ddragon.leagueoflegends.com/cdn/11.16.1/img/sprite/item0.png);
+	background-repeat: no-repeat;
+	background-position: -0px -240px;
+}
+.redemption{
+	height: 48px;
+	width: 48px;
+	background-image: url(http://ddragon.leagueoflegends.com/cdn/11.16.1/img/sprite/item0.png);
+	background-repeat: no-repeat;
+	background-position: -96px -432px;
+}
+.shurelya{
+	height: 48px;
+	width: 48px;
+	background-image: url(http://ddragon.leagueoflegends.com/cdn/11.16.1/img/sprite/item0.png);
+	background-repeat: no-repeat;
+	background-position: -240px -144px;
+}
+.wardstone{
+	height: 48px;
+	width: 48px;
+	background-image: url(http://ddragon.leagueoflegends.com/cdn/11.16.1/img/sprite/item1.png);
+	background-repeat: no-repeat;
+	background-position: -384px -288px;
+}
+.mikaels{
+	height: 48px;
+	width: 48px;
+	background-image: url(http://ddragon.leagueoflegends.com/cdn/11.16.1/img/sprite/item1.png);
+	background-repeat: no-repeat;
+	background-position: -384px -96px;
+}
+.anathemas{
+	height: 48px;
+	width: 48px;
+	background-image: url(http://ddragon.leagueoflegends.com/cdn/11.17.1/img/sprite/item1.png);
+	background-repeat: no-repeat;
+	background-position: -384px -432px;
+}
+/*------------------------5.2 Spell Order-----------------------*/
+.spell_order{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+.spell_order table{
+	background-color: rgba(250, 250, 250, 0.1);
+	color: white;
+	border-radius: 1rem;
+	font-size: 1.35rem;
+	margin: 1rem auto;
+	box-shadow: 5px 5px 10px black;
+	overflow: hidden;
+	border-collapse: collapse;
+}
+.cell{
+	width: 50px;
+	height: 50px;
+}
+.cell.active{
+	background-color: rgba(0, 0, 0,1);
+	color: floralwhite;
+	border-radius: 3px;
+}
+.w_spell, .r_spell,.level_number{
+	background-color: rgba(0, 0, 0, 0.3);
+}
+.q_spell th:first-child{
+	background: url(http://ddragon.leagueoflegends.com/cdn/11.16.1/img/spell/ThreshQ.png);
+	background-size: 100% 100%;
+	font-weight: 900;
+	outline: 2px solid black;
+	text-shadow: 1px 1px 2px black, -1px 1px 2px black, 1px -1px 2px black, -1px -1px 2px black;
+  outline-offset: -2px;
+}
+.w_spell th:first-child{
+	background: url(http://ddragon.leagueoflegends.com/cdn/11.16.1/img/spell/ThreshW.png);
+	background-size: 100% 100%;
+	outline: 2px solid black;
+	outline-offset: -2px;
+	text-shadow: 1px 1px 2px black, -1px 1px 2px black, 1px -1px 2px black, -1px -1px 2px black;
+	font-weight: 900;
+}
+.e_spell th:first-child{
+	background: url(http://ddragon.leagueoflegends.com/cdn/11.16.1/img/spell/ThreshE.png);
+	background-size: 100% 100%;
+	outline: 2px solid black;
+  outline-offset: -2px;
+  text-shadow: 1px 1px 2px black, -1px 1px 2px black, 1px -1px 2px black, -1px -1px 2px black;
+	font-weight: 900;
+}
+.r_spell th:first-child{
+	background: url(http://ddragon.leagueoflegends.com/cdn/11.16.1/img/spell/ThreshRPenta.png);
+	background-size: 100% 100%;
+	outline: 2px solid black;
+  outline-offset: -2px;
+	text-shadow: 1px 1px 2px black, -1px 1px 2px black, 1px -1px 2px black, -1px -1px 2px black;
+	font-weight: 900;
+}
+.cooldown, .cost{
+	font-size: 0.7rem;
+	color: grey;
+	font-style: italic;
+}
+.gold{
+	color: gold;
+}
+rules {
+	color: #8c8c8c;
+	font-style: italic;
+	font-size: 0.5rem;
+}
+stats{
+	font-weight: bold;
+}
+aura, unique, active, passive, raritymythic, consumable{
+	color: darkgoldenrod;
+}
+/*------------------------6. Match up/Patch notes-----------------------*/
+#match_up{
+	background: url(http://ddragon.leagueoflegends.com/cdn/img/champion/splash/Thresh_5.jpg);
+	background-image: radial-gradient(rgba(0,0,0,0), rgba(0,0,0,0.2)), url(http://ddragon.leagueoflegends.com/cdn/img/champion/splash/Thresh_5.jpg);
+	background-size: cover;
+}
+.matchup img {
+	width: 100px;
+	height: 100px;
+}
+.strong{
+	color: green;
+	margin: 0;
+	font-size: 2rem;
+	text-shadow: 1px 1px 2px black, -1px 1px 2px black, 1px -1px 2px black, -1px -1px 2px black;
+}
+.weak{
+	color: red;
+	margin: 0;
+	font-size: 2rem;
+	text-shadow: 1px 1px 2px black, -1px 1px 2px black, 1px -1px 2px black, -1px -1px 2px black;
+}
+.modifications{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+.modifications table{
+	font-size: 1.2rem;	
+	border-radius: 8px;	
+	padding: 0 1.5rem;
+	background: rgba(250, 250, 250, 0.1);
+	box-sizing: content-box;
+	margin: 1rem auto;
+	box-shadow: 5px 5px 10px black;
+	overflow: hidden;
+}
+.modifications table tr:nth-child(2n+1){
+	background-color: rgba(0, 0, 0, 0.3);
+}
+.modifications table th{
+	background-color: rgba(0, 0, 0, 0.3);
+}
+.modifications td{
+	padding: 1rem 1rem;
+}
+/*------------------------7. Pros-----------------------*/
+#stats{
+	background: url(http://ddragon.leagueoflegends.com/cdn/img/champion/splash/Thresh_6.jpg);
+	background-image: radial-gradient(rgba(0,0,0,0), rgba(0,0,0,0.2)), url(http://ddragon.leagueoflegends.com/cdn/img/champion/splash/Thresh_6.jpg);
+	background-size: cover;
+}
+.stats{
+	width: auto;
+	font-size: 1.3rem;
+	border-radius: 8px;	
+	font-variant: small-caps;
+	padding: 0 1.5rem;
+	background: rgba(250, 250, 250, 0.1);
+	box-sizing: content-box;
+	margin: 1rem auto;
+	box-shadow: 5px 5px 10px black;
+	overflow: hidden;
+}
+.stats tr:nth-child(2n+1){
+	background-color: rgba(0, 0, 0, 0.3);
+}
+.stats th{
+	background-color: rgba(0, 0, 0, 0.3);
+}
+.stats td{
+	padding: 1rem 1rem;
+}
+.pros{
+	position: relative;
 }
 .pros a {
+	position: relative;
 	text-decoration: none;
 	color: white;
 	background: black;
-	padding: 5px;
+	padding: 0.5rem 1rem;
+	border-radius: 0.3rem;
 }
 .pros a:hover {
 	background-color: rgba(150, 150, 150, 1.0);
 	transition: 1.2s;
 }
-.mainpage{
-  background-color: darkred;
-  border: none;
-  color: white;
-  padding: 10px 20px;
-  text-align: center;
-  font-size: 16px;
-  margin: 4px 2px;
-  opacity: 0.6;
-  transition: 0.3s;
-  display: flex;
-  text-decoration: none;
-  cursor: pointer;
-  position: sticky;
-  z-index: 10;
-  top: 88%;
-  left: 88%;
+
+@keyframes reveal{
+  0%{
+    opacity: 0;
+    filter: blur(30px);
+    transform: scale(0.8);
+  }
+  100%{
+    opacity: 1;
+    filter: blur(0);
+    transform: scale(1);
+  }
 }
-.mainpage:hover {
-	opacity: 1
+@keyframes start{
+  0%{
+      filter: brightness(0);
+  }
+  100%{
+    filter: brightness(1);  }
 }
+@media (max-width: 780px)
+{
+	#menu{
+		display: none;
+	}
+	h3, .matchup p{
+		font-size: 1.5rem;
+	}
+	.matchup img{
+		width: 50px;
+		height: 50px;
+	}
+
+	.cell{
+		width: 20px;
+		height: 20px;
+	}
+	fieldset, .modifications td, .stats td {
+		margin: 0;
+		padding: 0;
+	}
+	.core, .situational, .starter, .boots, .rune_section{
+		gap: 0;
+	}
+	.item_sect legend, .modifications table, .spell_order table, .stats {
+		font-size: 0.8rem;
+	}
+	.base{
+		margin: auto;
+	}
+}
+/*------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+
+

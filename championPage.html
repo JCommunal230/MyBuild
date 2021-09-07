@@ -1,69 +1,611 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en-GB">
 	<head>
 		<meta charset="utf-8" />
+		<!--Style-->
         <link rel="stylesheet" href="styles/championPage.css" />
+        <link rel="stylesheet" href="styles/fullpage.css" />
+        <!--Title-->
         <title> championName - MyBuild </title>
+        <!--Favicon-->
+        <link rel="icon" type="image/ico" href="img/icons/favicon.ico">
+        <!-- Font-->
         <link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet"> 
 	</head>
 <body>
-
-	<div class="container">
-		<section>
-			<h3> Thresh, Garde aux chaînes </h3>
-		</section>
-		<button class ="mainpage"> Main Page </button>
-		<section>
-			<div class="runes">
+	<nav id="menu">
+			<ul>
+				<!--<li data-menuanchor="1"><a href="#title_page">Thresh</a></li>-->
+				<li data-menuanchor="2"><a href="#2">Runes</a></li>				
+				<li data-menuanchor="3"><a href="#3">Items
+					<br>Spell Order</a>
+				</li>
+				<li data-menuanchor="4"><a href="#4">Match up
+					<br>Modifications</a>
+				</li>
+				<li data-menuanchor="5"><a href="#5">Stats<br>Pros</a></li>
+				<li id="homepage"><a href="homepage.html">Homepage</a></li>
+			</ul>
+	</nav>
+	<div class="container" id="fullpage">		
+		<div data-anchor="1" class="section" id="title_page">
+			<div class="base">
+				<h3 class="champion_name"> Thresh <br>
+				The Chain Warden </h3>
+			</div>
+		</div>
+		<div data-anchor="2" class="section" id="runes">
+			<div class="base">
 				<h3> Runes </h3>
+				<div class="rune_section">		
+					<table class="primary">
+						<thead>
+							<tr>
+								<th colspan="3">
+									<div class="Resolve">
+										<img src="http://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/7204_Resolve.png" alt="resolve icon">
+									</div>
+								</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr class="main_rune">
+								<td>
+									<div class="rune" id="Grasp_of_the_undying">
+										<img src="http://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Resolve/GraspOfTheUndying/GraspOfTheUndying.png" alt="Grasp of the undying icon">
+									</div>
+									<div class="tooltip" id ="tt_300" data-x="3" data-y="0" data-z="0">
+									</div>
+								</td>
+								<td class="main">
+									<div class="main_rune" id="Aftershock">
+										<img src="http://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Resolve/VeteranAftershock/VeteranAftershock.png" alt="Aftershock icon">
+									</div>
+									<div class="tooltip" id ="tt_301" data-x="3" data-y="0" data-z="1">
+									</div>
+								</td>
+								<td>
+									<div class="rune" id="Guardian">
+										<img src="http://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Resolve/Guardian/Guardian.png" alt="Guardian icon">
+									</div>
+									<div class="tooltip" id ="tt_302" data-x="3" data-y="0" data-z="2">
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<div class="rune" id="Demolish">
+										<img src="http://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Resolve/Demolish/Demolish.png" alt="Demolish icon">
+									</div>
+									<div class="tooltip" id ="tt_310" data-x="3" data-y="1" data-z="0">
+									</div>
+								</td>
+								<td class="active">
+									<div class="rune" id="Font_of_life">
+										<img src="http://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Resolve/FontOfLife/FontOfLife.png" alt="Font of life icon">
+									</div>
+									<div class="tooltip" id ="tt_311" data-x="3" data-y="1" data-z="1">
+									</div>
+								</td>
+								<td>
+									<div class="rune" id="Shield_bash">
+										<img src="http://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Resolve/MirrorShell/MirrorShell.png" alt="Shield bash icon">
+									</div>
+									<div class="tooltip" id ="tt_312" data-x="3" data-y="1" data-z="2">
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<div class="rune" id="Conditioning">
+										<img src="http://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Resolve/Conditioning/Conditioning.png" alt="Conditioning icon">
+									</div>
+									<div class="tooltip" id ="tt_320" data-x="3" data-y="2" data-z="0">
+									</div>
+								</td>
+								<td>
+									<div class="rune" id="Second_wind">
+										<img src="http://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Resolve/SecondWind/SecondWind.png" alt="Second wind icon">
+									</div>
+									<div class="tooltip" id ="tt_321" data-x="3" data-y="2" data-z="1">
+									</div>
+								</td>
+								<td class="active">
+									<div class="rune" id="Bone_plating">
+										<img src="http://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Resolve/BonePlating/BonePlating.png" alt="Bone plating icon">
+									</div>
+									<div class="tooltip" id ="tt_322" data-x="3" data-y="2" data-z="2">
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td class="active">
+									<div class="rune" id="Overgrowth">
+										<img src="http://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Resolve/Overgrowth/Overgrowth.png" alt="Overgrowth icon">
+									</div>
+									<div class="tooltip" id ="tt_330" data-x="3" data-y="3" data-z="0">
+									</div>
+								</td>
+								<td>
+									<div class="rune" id="Revitalize">
+										<img src="http://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Resolve/Revitalize/Revitalize.png" alt="Revitalize icon">
+									</div>
+									<div class="tooltip" id ="tt_331" data-x="3" data-y="3" data-z="1">
+									</div>
+								</td>
+								<td>
+									<div class="rune" id="Unflinching">
+										<img src="http://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Sorcery/Unflinching/Unflinching.png" alt="Unflinching icon">
+									</div>
+									<div class="tooltip" id ="tt_332" data-x="3" data-y="3" data-z="2">
+									</div>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<table class="secondary">
+						<thead>
+							<tr>
+								<th colspan="3">
+									<div id="Inspiration">
+										<img src="http://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/7203_Whimsy.png" alt="inspiration icon">
+									</div>
+								</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>
+									<div class="rune" id="Hextech_flashtraption">
+										<img src="http://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Inspiration/HextechFlashtraption/HextechFlashtraption.png" alt="hextech flash icon">
+									</div>
+									<div class="tooltip" id ="tt_110" data-x="1" data-y="1" data-z="0">
+									</div>
+								</td>
+								<td>
+									<div class="rune" id="Magical_footwear">
+										<img src="http://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Inspiration/MagicalFootwear/MagicalFootwear.png" alt="magical footwear icon">
+									</div>
+									<div class="tooltip" id ="tt_111" data-x="1" data-y="1" data-z="1">
+									</div>
+								</td>
+								<td>
+									<div class="rune" id="Perfect_timing">
+										<img src="http://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Inspiration/PerfectTiming/PerfectTiming.png" alt="perfect timing icon">
+									</div>
+									<div class="tooltip" id ="tt_112" data-x="1" data-y="1" data-z="2">
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<div class="rune" id="Future_s_market">
+										<img src="http://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Inspiration/FuturesMarket/FuturesMarket.png" alt="future's market icon">
+									</div>
+									<div class="tooltip" id ="tt_120" data-x="1" data-y="2" data-z="0">
+									</div>
+								</td>
+								<td>
+									<div class="rune" id="Minion_dematerializer">
+										<img src="http://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Inspiration/MinionDematerializer/MinionDematerializer.png" alt="Minion dematerializer icon">
+									</div>
+									<div class="tooltip" id ="tt_121" data-x="1" data-y="2" data-z="1">
+									</div>
+								</td>
+								<td class="active">
+									<div class="rune" id="Biscuit_delivery">
+										<img src="http://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Inspiration/BiscuitDelivery/BiscuitDelivery.png" alt="biscuit delivery icon">
+									</div>
+									<div class="tooltip" id ="tt_122" data-x="1" data-y="2" data-z="2">
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td class="active">
+									<div class="rune" id="Cosmic_insight">
+										<img src="http://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Inspiration/CosmicInsight/CosmicInsight.png" alt="cosmic insight icon">
+									</div>
+									<div class="tooltip" id ="tt_130" data-x="1" data-y="3" data-z="0">
+									</div>
+								</td>
+								<td>
+									<div class="rune" id="Approach_velocity">
+										<img src="http://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Resolve/ApproachVelocity/ApproachVelocity.png" alt="approach velocity icon">
+									</div>
+									<div class="tooltip" id ="tt_131" data-x="1" data-y="3" data-z="1">
+									</div>
+								</td>
+								<td>
+									<div class="rune" id="Time_warp_tonic">
+										<img src="http://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Inspiration/TimeWarpTonic/TimeWarpTonic.png" alt="htime warp tonic icon">
+									</div>
+									<div class="tooltip" id ="tt_132" data-x="1" data-y="3" data-z="2">
+									</div>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<table class="base_stats">
+						<thead>
+							<tr>
+								<th colspan="3">
+								</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>
+									<div class="rune">
+										<img src="http://ddragon.leagueoflegends.com/cdn/img/perk-images/StatMods/StatModsAdaptiveForceIcon.png" alt="adaptative force icon">
+									</div>
+									<div class="tooltip_stats">
+										<p><span class="tt_title"> Offensive </span><br> +5.4 Attack Damge or +9 Ability Power </p>
+									</div>
+								</td>
+								<td>
+									<div class="rune">
+										<img src="http://ddragon.leagueoflegends.com/cdn/img/perk-images/StatMods/StatModsAttackSpeedIcon.png" alt="attack speed icon">
+									</div>
+									<div class="tooltip_stats">
+										<p><span class="tt_title"> Offensive </span><br> +10% Attack Speed </p>
+									</div>
+								</td>
+								<td class="active">
+									<div class="rune">
+										<img src="http://ddragon.leagueoflegends.com/cdn/img/perk-images/StatMods/StatModsCDRScalingIcon.png" alt="ability haste icon">
+									</div>
+									<div class="tooltip_stats">
+										<p><span class="tt_title"> Offensive </span><br> +8 Ability Haste </p>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<div class="rune">
+										<img src="http://ddragon.leagueoflegends.com/cdn/img/perk-images/StatMods/StatModsAdaptiveForceIcon.png" alt="adaptative force icon">
+									</div>
+									<div class="tooltip_stats">
+										<p><span class="tt_title"> Adaptative </span><br> +5.4 Attack Damge or +9 Ability Power </p>
+									</div>
+								</td>
+								<td class="active">
+									<div class="rune">
+										<img src="http://ddragon.leagueoflegends.com/cdn/img/perk-images/StatMods/StatModsArmorIcon.png" alt="armor icon">
+									</div>
+									<div class="tooltip_stats">
+										<p><span class="tt_title"> Adaptative </span><br> +6 Armor </p>
+									</div>
+								</td>
+								<td>
+									<div class="rune">
+										<img src="http://ddragon.leagueoflegends.com/cdn/img/perk-images/StatMods/StatModsMagicResIcon.png" alt="magic resist icon">
+									</div>
+									<div class="tooltip_stats">
+										<p><span class="tt_title"> Adaptative </span><br> +8 Magic resistance</p>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td class="active">
+									<div class="rune">
+										<img src="http://ddragon.leagueoflegends.com/cdn/img/perk-images/StatMods/StatModsHealthScalingIcon.png" alt="health icon">
+									</div>
+									<div class="tooltip_stats">
+										<p><span class="tt_title"> Defensive </span><br> +15-90 Health at levels 1-18 </p>
+									</div>
+								</td>
+								<td>
+									<div class="rune">
+										<img src="http://ddragon.leagueoflegends.com/cdn/img/perk-images/StatMods/StatModsArmorIcon.png" alt="armor icon">
+									</div>
+									<div class="tooltip_stats">
+										<p><span class="tt_title"> Defensive </span><br> +6 Armor </p>
+									</div>
+								</td>
+								<td>
+									<div class="rune">
+										<img src="http://ddragon.leagueoflegends.com/cdn/img/perk-images/StatMods/StatModsMagicResIcon.png" alt="magic resist icon">
+									</div>
+									<div class="tooltip_stats">
+										<p><span class="tt_title"> Defensive </span><br> +8 Magic resistance </p>
+									</div>
+								</td>
+							</tr>
+						</tbody>
+					</table>			
+				</div>
 			</div>
-			<div class="basestats">
-				<h3> Base Stats </h3>
-					<p> Adaptative force</p>
-					<p> Adaptative force</p>
-					<p> Armor</p>
-			</div>
-		</section>
-		<section>
-			<div class="items">
+		</div>
+		<div data-anchor="3" class="section" id="items">
+			<div class="base">
 				<h3>Items</h3>
+				<div class="item_sect">	
+					<fieldset class="starter">
+						<legend>Starter</legend>
+						<div class="shoulderguards">
+							<div class="tooltip_items" id ="tt_3854" data-id="3854">
+							</div>
+						</div>
+					</fieldset>			
+					<fieldset class="core">
+						<legend>Core</legend>
+						<div class="solari">
+							<div class="tooltip_items" id ="tt_3190" data-id="3190">
+							</div>
+						</div>
+						<div class="zeke">
+							<div class="tooltip_items" id ="tt_3050" data-id="3050">
+							</div>
+						</div>
+						<div class="knightvow">
+							<div class="tooltip_items" id ="tt_3109" data-id="3109">
+							</div>
+						</div>
+						<div class="wardstone">
+							<div class="tooltip_items" id ="tt_4638" data-id="4638">
+							</div>
+						</div>
+					</fieldset>
+					<fieldset class="boots">
+						<legend>Boots</legend>
+						<div class="swiftness">
+							<div class="tooltip_items" id ="tt_3009" data-id="3009">
+							</div>
+						</div>
+					</fieldset>
+					<fieldset class="situational">
+						<legend>Situational</legend>
+						<div class="redemption">
+							<div class="tooltip_items" id ="tt_3107" data-id="3107">
+							</div>
+						</div>
+						<div class="shurelya">
+							<div class="tooltip_items" id ="tt_2065" data-id="2065">
+							</div>
+						</div>
+						<div class="mikaels">
+							<div class="tooltip_items" id ="tt_3222" data-id="3222">
+							</div>
+						</div>
+						<div class="anathemas">
+							<div class="tooltip_items" id ="tt_8001" data-id="8001">
+							</div>
+						</div>
+					</fieldset>
+				</div>
+				<div class="spell_order">
+					<h3>Spell Order</h3>
+					<table>
+						<thead>
+							<tr class="level_number">
+								<th></th>
+								<th>1</th>
+								<th>2</th>
+								<th>3</th>
+								<th>4</th>
+								<th>5</th>
+								<th>6</th>
+								<th>7</th>
+								<th>8</th>
+								<th>9</th>
+								<th>10</th>
+								<th>11</th>
+								<th>12</th>
+								<th>13</th>
+								<th>14</th>
+								<th>15</th>
+								<th>16</th>
+								<th>17</th>
+								<th>18</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr class="q_spell">
+								<th class="cell">
+									Q
+									<div class="tooltip_spell" data-id="q">
+									</div>
+								</th>
+								<th class="cell active">Q</th>
+								<th class="cell"></th>
+								<th class="cell"></th>
+								<th class="cell active">Q</th>
+								<th class="cell active">Q</th>
+								<th class="cell"></th>
+								<th class="cell active">Q</th>
+								<th class="cell"></th>
+								<th class="cell active">Q</th>
+								<th class="cell"></th>
+								<th class="cell"></th>
+								<th class="cell"></th>
+								<th class="cell"></th>
+								<th class="cell"></th>
+								<th class="cell"></th>
+								<th class="cell"></th>
+								<th class="cell"></th>
+								<th class="cell"></th>
+							</tr>
+							<tr class="w_spell">
+								<th class="cell">W
+									<div class="tooltip_spell" data-id="w">
+									</div>
+								</th>
+								<th class="cell"></th>
+								<th class="cell"></th>
+								<th class="cell active">W</th>
+								<th class="cell"></th>
+								<th class="cell"></th>
+								<th class="cell"></th>
+								<th class="cell"></th>
+								<th class="cell active">W</th>
+								<th class="cell"></th>
+								<th class="cell active">W</th>
+								<th class="cell"></th>
+								<th class="cell active">W</th>
+								<th class="cell active">W</th>
+								<th class="cell"></th>
+								<th class="cell"></th>
+								<th class="cell"></th>
+								<th class="cell"></th>
+								<th class="cell"></th>
+							</tr>
+							<tr class="e_spell">
+								<th class="cell">E
+									<div class="tooltip_spell" data-id="e">
+									</div>
+								</th>
+								<th class="cell"></th>
+								<th class="cell active">E</th>
+								<th class="cell"></th>
+								<th class="cell"></th>
+								<th class="cell"></th>
+								<th class="cell"></th>
+								<th class="cell"></th>
+								<th class="cell"></th>
+								<th class="cell"></th>
+								<th class="cell"></th>
+								<th class="cell"></th>
+								<th class="cell"></th>
+								<th class="cell"></th>
+								<th class="cell active">E</th>
+								<th class="cell active">E</th>
+								<th class="cell"></th>
+								<th class="cell active">E</th>
+								<th class="cell active">E</th>
+							</tr>
+							<tr class="r_spell">
+								<th class="cell">R
+									<div class="tooltip_spell" data-id="r">
+									</div>
+								</th>
+								<th class="cell"></th>
+								<th class="cell"></th>
+								<th class="cell"></th>
+								<th class="cell"></th>
+								<th class="cell"></th>
+								<th class="cell active">R</th>
+								<th class="cell"></th>
+								<th class="cell"></th>
+								<th class="cell"></th>
+								<th class="cell"></th>
+								<th class="cell active">R</th>
+								<th class="cell"></th>
+								<th class="cell"></th>
+								<th class="cell"></th>
+								<th class="cell"></th>
+								<th class="cell active">R</th>
+								<th class="cell"></th>
+								<th class="cell"></th>
+							</tr>
+						</tbody>
+					</table>
+				</div>
 			</div>
-			<div class="spellorder">
-				<h3> Spell Order </h3>
+		</div>
+		<div data-anchor="4" class="section" id="match_up">
+			<div class="base">
+				<h3> Match up </h3>
+				<div class = "matchup">				
+					<p class="strong">Strong against</p>
+					<img loading="lazy" src="http://ddragon.leagueoflegends.com/cdn/11.16.1/img/champion/Leona.png" alt ="Leona icon" title ="Leona">
+					<img loading="lazy" src="http://ddragon.leagueoflegends.com/cdn/11.16.1/img/champion/Pantheon.png" alt = "Pantheon icon" title ="Pantheon">
+					<img loading="lazy" src="http://ddragon.leagueoflegends.com/cdn/11.16.1/img/champion/Rammus.png" alt ="Rammus icon" title ="Rammus">
+					<p class="weak">Weak against</p>
+					<img loading="lazy" src="http://ddragon.leagueoflegends.com/cdn/11.16.1/img/champion/Zyra.png" alt ="Zyra icon" title="Zyra">
+					<img loading="lazy" src="http://ddragon.leagueoflegends.com/cdn/11.16.1/img/champion/Sivir.png" alt ="Sivir icon" title ="Sivir">
+					<img loading="lazy" src="http://ddragon.leagueoflegends.com/cdn/11.16.1/img/champion/Ezreal.png" alt ="Ezreal icon" title ="Ezreal">
+				</div>
+				<div class = "modifications">
+					<h3>Recent modifications</h3>
+					<table>
+						<thead>
+							<tr>
+								<th>
+									Patch
+								</th>
+								<th>
+									Modifications
+								</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>11.15
+								</td>
+								<td>E: Cooldown increased to 13/12.25/11.5/10.75/10 seconds from 11/10.5/10/9.5/9.
+								</td>
+							</tr>
+							<tr>
+								<td>11.10
+								</td>
+								<td>Base health reduced to 530 from 561.<br>
+	    							Health growth increased to 95 from 93.
+								</td>
+							</tr>
+							<tr>
+								<td>11.8
+								</td>
+								<td>E: Cooldown increased to 11/10.5/10/9.5/9 seconds from 9 at all ranks.
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
 			</div>
-		</section>
-		<section>
-			<div class = "matchup">
-				<h3> Match ups </h3>
-				<p>Strong VS</p>
-				<img src="images/icons/Zyra_icon.png">
-				<img src="images/icons/Rakan_icon.png">
-				<p>Weak VS</p>
-				<img src="images/icons/Zyra_icon.png">
-				<img src="images/icons/Rakan_icon.png">
-			</div>
-			<div class = "modifications">
-				<h3>Recent modifications</h3>
-				<p> v11.14 : -5 AD</p>
-				<p> v11.10 : -7cd on E</p>
-				<p> v10.14 : +3 AP</p>
-			</div>
-		</section>
-		<section>
-			<div class = "stats">
+		</div>
+		<div data-anchor="5" class="section" id="stats">
+			<div class="base">
 				<h3>Stats</h3>
-				<p>Overall winrate</p>
+				<table class="stats">
+						<thead>
+							<tr>
+								<th>
+								</th>
+								<th>
+									Current Patch
+								</th>
+								<th>
+									Last Patch
+								</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Win rate
+								</td>
+								<td>49.8% (25th)
+								</td>
+								<td>50.4% (19th)
+								</td>
+							</tr>
+							<tr>
+								<td>Pick rate
+								</td>
+								<td>21.7% (1st)
+								</td>
+								<td>21.6% (1st)
+								</td>
+							</tr>
+							<tr>
+								<td>Ban rate
+								</td>
+								<td>22.4% (14th)
+								</td>
+								<td>22.7% (13th)
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				<h3 class="pros_title">Look up the pros</h3>
+				<div class ="pros" id ="pro">				
+					
+				</div>
 			</div>
-			<div class ="pros">
-				<h3>Look up the pros</h3>
-				<h4> SoloQ </h4>
-				<a href="https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwiF0uH-2ZzyAhVG14UKHW7jD8AQFnoECAgQAw&url=https%3A%2F%2Fwww.probuilds.net%2Fchampions%2Fdetails%2FThresh&usg=AOvVaw0B8DTwigl1VyN-93z-rmD2"> Probuilds </a>
-				<h4> Competitive games </h4>
-				<a href = "https://gol.gg/champion/champion-matchlist/92/season-S11/split-Summer/tournament-ALL/"> GamesOfLegends </a>
-			</div>
-		</section>
-	</div>
+		</div>		
+	</div>	
+	<script src="scripts/fullpage.js"></script>
+	<script src="scripts/championPage.js"></script>
 </body>
 </html>
